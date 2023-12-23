@@ -117,14 +117,13 @@ const AddNewPost = () => {
                 component="div"
               />
               <button
-                disabled={
-                  values.Content.length < 30 || values.title.length < 5
-                    ? true
-                    : false
-                }
                 type="submit"
                 onClick={() => submitForm}
-                className="flex justify-center items-center gap-3 h-[40px] w-[150px] bg-purple-600 text-white rounded hover:bg-secondary duration-300 mt-5"
+                className={
+                  values.Content.length < 30 || values.title.length < 5
+                    ? "flex justify-center items-center gap-3 h-[40px] w-[150px] bg-gray-200 text-black rounded mt-5 cursor-not-allowed"
+                    : "flex justify-center items-center gap-3 h-[40px] w-[150px] bg-purple-600 text-white rounded hover:bg-secondary duration-300 mt-5"
+                }
               >
                 <MdOutlinePostAdd />
                 Share
